@@ -1,0 +1,3 @@
+window.alert('')                        // Exibe um alerta na Tela
+window.confirm('')                       // Solicita uma confirmação na Tela
+window.prompt('')
