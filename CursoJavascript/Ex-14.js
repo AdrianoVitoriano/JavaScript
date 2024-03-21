@@ -40,17 +40,13 @@ function opcoes(args) {
     let opcao = 0
     if (args === "menu") {
         console.log('\n1 - Criar postagem\n2 - Exibir postagens\n3 - Sair\n')
-    }
-    if (args === "postagem") {
+    }else if (args === "postagem") {
         console.log('\n1 - Criar comentario\n2 - Exibir comentarios\n3 - Sair da postagem\n')
-    }
-    if (args === "visualizarPostagem") {
+    }else if (args === "visualizarPostagem") {
         console.log('\n1 - Listar postagens\n2 - Sei o ID\n3 - Voltar ao menu\n')
-    }
-    if (args === "comentario") {
+    }else if (args === "comentario") {
         console.log('\n1 - Criar comentario\n2 - Exibir comentarios\n3 - Sair da postagem\n')
-    }
-    if (args === "visualizarComentario") {
+    }else if (args === "visualizarComentario") {
         console.log('\n1 - Listar comentarios\n2 - Sei o ID\n3 - Voltar a postagem\n')
     }
     do {
@@ -66,9 +62,9 @@ function opcoes(args) {
 
 
 function criarPostagem() {
-    let idPostagem = postagens.length + 1
+
     let postagem = {
-        idPostagem,
+        idPostagem: postagens.length + 1,
         titulo: prompt('Digite o título da postagem: '),
         mensagem: prompt('Digite a mensagem da postagem: '),
         autor: prompt('Digite o autor da postagem: '),
@@ -89,8 +85,8 @@ function criarPostagem() {
         },
     }
     postagens.push(postagem)
-    console.log(`Postagem criada com sucesso! #${idPostagem}`)
-    exibirPostagens()
+    console.log(`Postagem criada com sucesso! #${postagem.idPostagem}`)
+    comentario(postagem.idPostagem -1)
 }
 
 
@@ -128,8 +124,8 @@ function listarPostagens() {
 
     } else {
 
-        for (let i = 0; i < postagens.length; i++) {
-            console.log(`#${i + 1} - ${postagens[i].titulo} - ${postagens[i].autor}`)
+        for (let p of postagens) {
+            console.log(`#${postagens[p].idPostagem + 1} - ${postagens[p].titulo} - ${postagens[p].autor}`)
         }
 
     }
@@ -175,7 +171,7 @@ function criarComentario(id) {
     let mensagem = prompt('Digite a mensagem do comentário: ')
     postagens[id].comentarios.push(postagens[id].novoComentario(autor, mensagem))
 
-    return `Comentário criado com sucesso! #${postagens[id].comentarios.length}`
+    console.log(`\n Comentário criado com sucesso! #${postagens[id].comentarios.length}`)
 
 }
 function visualizarComentarios(id){
