@@ -110,7 +110,7 @@ function criarFaixa(precoInicial, precoFinal) {
     }
     faixas.push(faixa)
     listarProdutos
-    console.log(`Faixa de preço criada com sucesso! #${faixa.idFaixa} - R$${faixa.precoInicial} - R$${faixa.precoFinal}`)
+    return `Faixa de preço criada com sucesso! #${faixa.idFaixa} - R$${faixa.precoInicial} - R$${faixa.precoFinal}`
 
 }
 
@@ -172,7 +172,7 @@ function listarFaixas(){
             break
         case 2:
 
-            
+
             if (precos[0] !== precos[1]){
 
                 criarFaixa(0, (max).toFixed(2))
@@ -221,13 +221,13 @@ function nome(){
 }
 function filtroFaixa(id){
     let contador = 0
-    for(let produto of produtos){
-        if(produto.preco <= faixas[id].precoFinal && produto.preco >= faixas[id].precoInicial){
+for(let produto of produtos){
+ if(produto.preco <= faixas[id].precoFinal && produto.preco >= faixas[id].precoInicial){
         console.log(`#${produto.idProduto} - ${produto.nome} - R$${produto.preco}`)
-        contador++
-        }
+   contador++
     }
-    if(contador === 0){
-        console.log('Nenhum produto não encontrado!')
-        }
+}
+if(contador === 0){
+    console.log('Nenhum produto não encontrado!')
+}
 }
