@@ -7,13 +7,13 @@ const prompt = PromptSync()
 
 const nomeArquivo = prompt('Digite o nome do arquivo: ') + '.json'
 const crud = {
-
+    post: [],
     read(arquivo){
         return readFile(arquivo)
     },
     create(arquivo, data){
-        console.log(this.read(arquivo))
-        createFile(arquivo,[this.read(arquivo), data ])
+
+        createFile(arquivo,[this.read(arquivo),data ])
     }
 }
 crud.create(nomeArquivo, promptData())

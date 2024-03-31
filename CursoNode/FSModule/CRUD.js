@@ -14,8 +14,9 @@ export function createFile(file, data) {
 }
 export function readFile(file) {
   try{
-    return JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }).replace('[','').replace(']',''))
-  }catch{
+    return JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))
+  }catch(error){
+    console.error(error)
     createFile(file, promptData()) 
     return readFile(file)
   }
