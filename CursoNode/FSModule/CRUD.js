@@ -1,7 +1,5 @@
-import { error } from "console";
 import PromptSync from "prompt-sync";
 import fs from "fs";
-import { promptData } from "./myFunctions.js";
 
 const prompt = PromptSync()
 
@@ -15,13 +13,23 @@ export function createFile(file, data) {
 export function readFile(file) {
   try{
     return JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))
-  }catch(error){
-    console.error(error)
+  }catch{
     createFile(file, promptData()) 
     return readFile(file)
   }
 }
-export function updateFile(file, dados){
-  
+
+export function promptData(){
+    const data = {
+        id: newId(),
+        title: prompt('Qual o título da sua postagem? '),
+        content: prompt('Digite o conteúdo: '),
+        date: new Date ()
+      }
+    return data
 }
+function newId(){
+    return Math.random().toString(32).substring(2,9)
+}
+
 
