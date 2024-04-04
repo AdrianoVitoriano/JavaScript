@@ -34,11 +34,8 @@ const crud = {
   },
 };
 async function main() {
-  let nomeArquivo = prompt("Digite o nome do arquivo: ") + ".json";
-  console.log("\n");
-  let option;
+  let option = 4
   do {
-    option = options("main");
     switch (option) {
       case 1:
         crud.create(nomeArquivo);
@@ -50,7 +47,7 @@ async function main() {
         crud.search(nomeArquivo);
         break;
       case 4:
-        nomeArquivo = prompt("Digite o nome do arquivo: ") + ".json";
+        let nomeArquivo = prompt("Digite o nome do arquivo: ") + ".json";
         crud.read(nomeArquivo);
         break;
       case 5:
@@ -61,6 +58,7 @@ async function main() {
         console.log("Erro... Saindo");
         console.log("\n");
     }
+    option = options("main");
   } while (option !== 5);
 }
 

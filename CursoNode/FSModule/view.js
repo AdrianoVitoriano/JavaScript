@@ -39,18 +39,17 @@ export function searchPost(posts) {
     case 1:
       let id = prompt("Digite o ID: ");
       console.log("\n");
-      post = filterPosts("id", posts, id);
-      showPosts(post.id, post.title, post.content, post.date, 70);
-      break;
+      showWitchArray(filterPosts("id", posts, id))
+      break; 
     case 2:
       let title = prompt("Digite o Title: ");
       console.log("\n");
-      searchWitchArray(filterPosts("title", posts, title));
+      showWitchArray(filterPosts("title", posts, title));
       break;
     case 3:
       let content = prompt("Digite o Content: ");
       console.log("\n");
-      searchWitchArray(filterPosts("content", posts, content));
+      showWitchArray(filterPosts("content", posts, content));
       break;
     case 4:
       let date = prompt("Digite o Date: ");
@@ -131,11 +130,16 @@ function filterPosts(typeSearch, posts, dataSearch) {
 
       break;
     case "content":
+      if (posts[0] === undefined) {
+        if (posts.content === dataSearch) {
+          return posts;
+        }
+      }else{
       posts.forEach((item) => {
         if (item.content.includes(dataSearch)) {
           results.push(item);
         }
-      });
+      })};
       return results;
       break;
     case "date":
@@ -143,12 +147,16 @@ function filterPosts(typeSearch, posts, dataSearch) {
       break;
   }
 }
-function searchWitchArray(post) {
+function showWitchArray(post) {
+
+  if (post != '' && post !== undefined){
   if (post[0] === undefined) {
     showPosts(post.id, post.title, post.content, post.date, 70);
   } else {
     for (let item of post) {
       showPosts(item.id, item.title, item.content, item.date, 70);
     }
+  }} else{
+    console.log('Nenhum resultado encontrado.')
   }
 }

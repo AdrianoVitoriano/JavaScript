@@ -14,11 +14,13 @@ export function readFile(file) {
   try{
     return JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))
   }catch{
-    createFile(file, promptData()) 
-    return readFile(file)
+    let continuar = prompt('Esse arquivo não existe. Deseja criar o arquivo? (Y/N): ')
+    if (continuar.toUpperCase() === 'Y'){
+     createFile(file, promptData()) 
+     return readFile(file)
+    }
   }
 }
-
 export function promptData(){
     const data = {
         id: newId(),
