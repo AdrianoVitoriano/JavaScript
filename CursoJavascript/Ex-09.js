@@ -9,17 +9,13 @@ import PromptSync from "prompt-sync";
 const prompt = PromptSync()
 
 let notas = []
-let i = prompt('Quantas notas deseja inserir? ')
-for(let j = 0; j < i; j++){
-    notas[j] = Number(prompt('Insira a nota: '))
-}
 
-console.log(calcularClassificacao(notas))
 
-function calcularClassificacao(notas){
 
+console.log(calcularMedia())
+
+function calcularClassificacao(media){
     let classificacao = ''
-    const media = calcularMedia(notas)
     if (media < 60){
         classificacao = 'F'
     }else if (media < 70){
@@ -43,10 +39,18 @@ function calcularClassificacao(notas){
     }
 }
 
-function calcularMedia(array){
+function calcularMedia(...notas){
+    let i = prompt('Quantas notas deseja inserir? ')
     let soma = 0
-    for (let nota of array){
+    for(let j = 0; j < i; j++){
+        let nota = Number(prompt('Insira a nota: '))
+        if(!nota){
+        notas[j] = nota
         soma += nota
+        }else{
+            console.log("isso não é um número!")
+            j--
+        }
     }
-    return soma/array.length
+    return calcularClassificacao(soma)
 }

@@ -35,6 +35,7 @@ const crud = {
 };
 async function main() {
   let option = 4
+  let nomeArquivo
   do {
     switch (option) {
       case 1:
@@ -47,7 +48,7 @@ async function main() {
         crud.search(nomeArquivo);
         break;
       case 4:
-        let nomeArquivo = prompt("Digite o nome do arquivo: ") + ".json";
+        nomeArquivo = prompt("Digite o nome do arquivo: ") + ".json";
         crud.read(nomeArquivo);
         break;
       case 5:
