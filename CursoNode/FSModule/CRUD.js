@@ -10,6 +10,7 @@ export function createFile(file, data) {
     console.error('Erro: ', error)
   }
 }
+
 export function readFile(file) {
   try{
     return JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))
