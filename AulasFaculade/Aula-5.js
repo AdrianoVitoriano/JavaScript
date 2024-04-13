@@ -3,7 +3,7 @@ function menorLista(array) {return Math.min(...array)}
 function somarLista(array){return array.reduce((accumulator,number) => accumulator += number,0)}
 function valoresMenorQue(array, limite = 20){return array.filter((number) => number < limite)}
 function primeiroUltimo(array){return [array[0],array[array.length-1]]}
-
+''
 const array = [6,3,78,3,6,95,3,6,4,2]
 
 console.log(`

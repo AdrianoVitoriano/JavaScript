@@ -30,16 +30,19 @@ export function addDataFile(file, newData) {
 console.clear()
 let asciiArt = {
   art: [],
+  name: prompt
   getArt(){
-    for(let i = 0; i < 31; i++){
+    console.log('Desenhe a ascii art: ')
+    for(let i = 0; i < 15; i++){
     this.art[i] = prompt()
     }
   }
 }
 
 
-
 asciiArt.getArt()
+
+console.clear()
 
 asciiArt = JSON.stringify(asciiArt)
 console.log(`${JSON.parse(asciiArt).art}`)
@@ -76,4 +79,19 @@ function hyphen(width){
 
 function underline(width){
   console.log("_".repeat(width))
+}
+
+
+import PromptSync from "prompt-sync";
+const prompt = PromptSync()
+const num = prompt("Digite o número: ")
+
+
+
+
+console.log(fatorial(num))
+function fatorial(num){
+    let factorial = 1
+    for (let i = 0; i<num.length;i++){factorial *= i+1 }
+    return factorial
 }
