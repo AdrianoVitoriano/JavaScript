@@ -1,0 +1,40 @@
+[
+  {
+    "nome": "Analise e Desenvolvimento de Sistemas",
+    "semestres": 2,
+    "disciplinas": [
+      {
+        "disciplinas": [
+          "Algoritmos e Lógica de Programação",
+          "Administração Geral",
+          "Arquitetura e Organização de Computadores",
+          "Laboratório de Hardware",
+          "Programação em Microinformática",
+          "Inglês I",
+          "Matemática Discreta"
+        ]
+      },
+      {
+        "disciplinas": [
+          "Contabilidade",
+          "Engenharia de Software I",
+          "Linguagem de Programação",
+          "Sistemas de Informação",
+          "Inglês II",
+          "Comunicação e Expressão",
+          "Cálculo"
+        ]
+      }
+    ]
+  },
+  {
+    "nome": "Comex",
+    "semestres": 2,
+    "disciplinas": [
+      {
+        "disciplinas": ["Direito internacional", "Modalidades de transportes"]
+      },
+      { "disciplinas": ["historia ", "Importação"] }
+    ]
+  }
+]

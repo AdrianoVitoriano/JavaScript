@@ -36,7 +36,7 @@ Para podermos utilizar as variáveis e constantes, precisamos primeiro instancia
 - [let](#let)
 - [var](#var)
 - [const](#const)
-
+-0
 #### Regras de nomeação
 
 Para declararmos variáveis e constantes, existe algumas regras. Veja ela abaixo:

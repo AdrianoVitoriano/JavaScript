@@ -16,7 +16,7 @@ numbers.unshift(0)// Adiciona o número 0 ao ínicio do array // [0, 1, 2, 3]
 
 // Adicionando um elemento ao meio do array
 
-numbers.splice(1,1,4) // Adiciona o número 4 na posição 1 e remove o número 2 // [0, 4, 2, 3]
+numbers.splice(1,1,4) // Adiciona o número 4 na posição 1 e remove o número 1 // [0, 4, 2, 3]
 
 // Adricionando um elemento ao final do array
 
