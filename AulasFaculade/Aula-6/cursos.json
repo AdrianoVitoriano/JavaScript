@@ -36,5 +36,23 @@
       },
       { "disciplinas": ["historia ", "Importação"] }
     ]
+  },
+  {
+    "nome": "kamasutra",
+    "semestres": 4,
+    "disciplinas": [
+      { "disciplinas": ["Aprofundamento sobre preliminares"] },
+      { "disciplinas": ["Introdução à introdução"] },
+      {
+        "disciplinas": ["69", "Como achar o clitoris", "Como fazer Full Nelson"]
+      },
+      {
+        "disciplinas": [
+          "Ponto G masculino",
+          "Como tratar uma gorda na cama",
+          "Sexo"
+        ]
+      }
+    ]
   }
 ]
